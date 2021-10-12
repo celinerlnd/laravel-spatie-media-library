@@ -74,10 +74,10 @@ class AvatarController extends Controller
      * @param  \App\Models\Avatar  $avatar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Avatar $avatar, $id)
+    public function update(Request $request, $avatar)
     {
         $user = auth()->user();
-        $user->avatar_id = $request->selectedAvatar;
+        $user->avatar_id = $avatar;
         $user->save();
         return redirect()->back();
     }

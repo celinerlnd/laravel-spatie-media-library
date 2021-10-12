@@ -38,11 +38,10 @@
                                 onclick="event.preventDefault();document.getElementById('selectForm{{ $avatar->id }}').submit()"><i
                                     class="text-success fas fa-check"></i></a>
 
-                            <form action="{{ route('avatar.update', auth()->id()) }}" style="display:none"
+                            <form action="{{ route('avatar.update', $avatar->id) }}" style="display:none"
                                 id="selectForm{{ $avatar->id }}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <input type="hidden" type="submit" name="selectedAvatar" value="{{ $avatar->id }}">
                             </form>
                             <a href="#"><i class="text-danger fas fa-minus-circle"></i></a>
                         </div>
